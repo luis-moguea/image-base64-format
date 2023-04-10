@@ -1,6 +1,6 @@
 const fileInput = document.querySelector("#file-js")
 
-fileInput.addEventListener("click", (e)=>{
+fileInput.addEventListener("click", ()=>{
     const file = fileInput.files[0]
     const reader = new FileReader()
 
@@ -8,5 +8,8 @@ fileInput.addEventListener("click", (e)=>{
         console.log(reader.result)
     })
 
-    reader.readAsDataURL(file)
+    if(file){
+        reader.readAsDataURL(file)
+    }
+
 })
